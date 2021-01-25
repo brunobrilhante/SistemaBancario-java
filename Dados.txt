@@ -1,4 +1,0 @@
-Nome: ana 
-Número: 123 
-Saldo: R$: 0.0
-
