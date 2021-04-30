@@ -5,6 +5,7 @@
  */
 package view_GUI;
 
+import controller_db.MySQL;
 import model_entities.Conta;
 import model_entities.ContaEspecial;
 import model_entities.RepositorioContas;
@@ -146,7 +147,8 @@ public class TelaContaEspecial extends javax.swing.JFrame {
                 } else {
                     if (array.verificarCPF(cpf) == null) {
                         array.addConta(new ContaEspecial(limite, numero, 0.0, cpf, nome));
-                        JOptionPane.showMessageDialog(null, "Conta cadastrada!", "Concluído", JOptionPane.INFORMATION_MESSAGE);
+                        MySQL.insertConta(nome, cpf, numero, 0.0);
+                        MySQL.insertContaEspecial(cpf, limite);
                     }
                     else{
                         JOptionPane.showMessageDialog(null, "O CPF já está cadastrado", "ERRO", JOptionPane.ERROR_MESSAGE);

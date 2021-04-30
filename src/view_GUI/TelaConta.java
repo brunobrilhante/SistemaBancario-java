@@ -5,6 +5,7 @@
  */
 package view_GUI;
 
+import controller_db.MySQL;
 import model_entities.Conta;
 import model_entities.RepositorioContas;
 import javax.swing.JOptionPane;
@@ -149,7 +150,7 @@ public class TelaConta extends javax.swing.JFrame {
                 else {
                     if (array.verificarCPF(cpf) == null) {
                         array.addConta(new Conta(numero, 0.0, cpf, nome));
-                        JOptionPane.showMessageDialog(null, "Conta cadastrada!", "Concluído", JOptionPane.INFORMATION_MESSAGE);
+                        MySQL.insertConta(nome, cpf, numero, 0.0);  
                     } 
                     else {
                         JOptionPane.showMessageDialog(null, "O CPF já está cadastrado", "ERRO", JOptionPane.ERROR_MESSAGE);
