@@ -1,6 +1,6 @@
-package GUI;
+package view_GUI;
 
-import entities.*;
+import model_entities.RepositorioContas;
 import java.util.ConcurrentModificationException;
 import javax.swing.JOptionPane;
 

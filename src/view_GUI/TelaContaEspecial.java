@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI;
+package view_GUI;
 
-import entities.Conta;
-import entities.ContaEspecial;
-import entities.RepositorioContas;
+import model_entities.Conta;
+import model_entities.ContaEspecial;
+import model_entities.RepositorioContas;
 import java.util.InputMismatchException;
 import javax.swing.JOptionPane;
 

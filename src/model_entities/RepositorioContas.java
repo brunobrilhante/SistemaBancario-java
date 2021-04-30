@@ -1,4 +1,4 @@
-package entities;
+package model_entities;
 
 import java.io.BufferedReader;
 import java.io.File;

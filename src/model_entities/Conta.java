@@ -1,4 +1,4 @@
-package entities;
+package model_entities;
 
 import javax.swing.JOptionPane;
 
