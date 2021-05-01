@@ -77,20 +77,31 @@ public class MySQL {
     public static String searchContas(){
         Connection conn = null;        
         Statement st = null;
-        ResultSet rs = null;
-        String dados = "";
+        ResultSet rs = null;        
+        String dados = "";        
         
         try{
             conn = DB.getConnection();
             st = conn.createStatement();       
             rs = st.executeQuery("SELECT * FROM Conta");                          
             
+            
             while(rs.next()){
                 dados += "Nome: " + rs.getString("Nome") + "\nNúmero: " + rs.getInt("Numero") + "\nSaldo: R$" + rs.getDouble("Saldo") + "\n\n";
+            }
+            
+            rs = st.executeQuery("SELECT * FROM ContaEspecial");
+            while(rs.next()){
+                dados += "Nome: " + rs.getString("Nome") + "\nNúmero: " + rs.getInt("Numero") + "\nSaldo: R$" + rs.getDouble("Saldo") + "\nLimite: " + rs.getDouble("Limite") + "\n\n";
             }
         }
         catch(SQLException e){
             JOptionPane.showMessageDialog(null, "Erro inesperado: " + e, "ERRO", JOptionPane.ERROR_MESSAGE);
+        }
+        finally{
+            DB.closeStatement(st);
+            DB.cloneResultSet(rs);            
+            DB.closeConnection();
         }
         return dados;
     }
