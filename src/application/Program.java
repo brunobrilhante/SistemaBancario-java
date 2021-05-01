@@ -1,11 +1,6 @@
 package application;
 
 import view_GUI.TelaPrincipal;
-import controller_db.DB;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import javax.swing.JOptionPane;
 
 public class Program {
    

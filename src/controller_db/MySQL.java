@@ -36,11 +36,12 @@ public class MySQL {
                 JOptionPane.showMessageDialog(null, "Erro inesperado: " + e, "ERRO", JOptionPane.ERROR_MESSAGE);
             }
             finally{
-                DB.closeStatement(st);                
+                DB.closeStatement(st);   
+                DB.closeConnection();
             }
     }
     
-     public static void insertContaEspecial(String cpf, double limite){
+    public static void insertContaEspecial(String nome, String cpf, int numero, double saldo, double limite){
         Connection conn = null;
 
             PreparedStatement st = null;
@@ -48,11 +49,14 @@ public class MySQL {
             try{
                 conn = DB.getConnection();
 
-                st = conn.prepareStatement("INSERT INTO ContaEspecial (Limite, CPF) "
-                                                    + "VALUES (?, ?");
+                st = conn.prepareStatement("INSERT INTO ContaEspecial (Nome, CPF, Numero, Saldo, Limite) "
+                                                    + "VALUES (?, ?, ?, ?, ?)");
                 
-                st.setDouble(1, limite);
+                st.setString(1, nome);
                 st.setString(2, cpf);
+                st.setInt(3, numero);
+                st.setDouble(4, saldo);
+                st.setDouble(5, limite);
 
                 int linhasAfetadas = st.executeUpdate();
                 
@@ -63,7 +67,7 @@ public class MySQL {
                 JOptionPane.showMessageDialog(null, "Erro inesperado: " + e, "ERRO", JOptionPane.ERROR_MESSAGE);
             }
             finally{
-                DB.closeStatement(st);
+                DB.closeStatement(st);   
                 DB.closeConnection();
             }
     }

@@ -147,8 +147,7 @@ public class TelaContaEspecial extends javax.swing.JFrame {
                 } else {
                     if (array.verificarCPF(cpf) == null) {
                         array.addConta(new ContaEspecial(limite, numero, 0.0, cpf, nome));
-                        MySQL.insertConta(nome, cpf, numero, 0.0);
-                        MySQL.insertContaEspecial(cpf, limite);
+                        MySQL.insertContaEspecial(nome, cpf, numero, 0.0, limite);
                     }
                     else{
                         JOptionPane.showMessageDialog(null, "O CPF já está cadastrado", "ERRO", JOptionPane.ERROR_MESSAGE);
