@@ -71,4 +71,8 @@ public class MySQL {
                 DB.closeConnection();
             }
     }
+    
+    public static void searchContas(){
+        
+    }
 }
