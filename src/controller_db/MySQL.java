@@ -2,7 +2,9 @@ package controller_db;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import javax.swing.JOptionPane;
 
 /**
@@ -72,7 +74,24 @@ public class MySQL {
             }
     }
     
-    public static void searchContas(){
+    public static String searchContas(){
+        Connection conn = null;        
+        Statement st = null;
+        ResultSet rs = null;
+        String dados = "";
         
+        try{
+            conn = DB.getConnection();
+            st = conn.createStatement();       
+            rs = st.executeQuery("SELECT * FROM Conta");                          
+            
+            while(rs.next()){
+                dados += "Nome: " + rs.getString("Nome") + "\nNúmero: " + rs.getInt("Numero") + "\nSaldo: R$" + rs.getDouble("Saldo") + "\n\n";
+            }
+        }
+        catch(SQLException e){
+            JOptionPane.showMessageDialog(null, "Erro inesperado: " + e, "ERRO", JOptionPane.ERROR_MESSAGE);
+        }
+        return dados;
     }
 }

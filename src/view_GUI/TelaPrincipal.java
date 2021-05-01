@@ -1,5 +1,6 @@
 package view_GUI;
 
+import controller_db.MySQL;
 import model_entities.RepositorioContas;
 import java.util.ConcurrentModificationException;
 import javax.swing.JOptionPane;
@@ -228,11 +229,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_itemContaEspecialActionPerformed
 
     private void itemListarContasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemListarContasActionPerformed
-        if (array.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Não há contas cadastradas", "Erro", JOptionPane.ERROR_MESSAGE);
-        } else {
-            JOptionPane.showMessageDialog(null, array.listar(), "Listagem", JOptionPane.INFORMATION_MESSAGE);
-        }
+        JOptionPane.showMessageDialog(null, MySQL.searchContas(), "Listagem", JOptionPane.INFORMATION_MESSAGE);
+        
     }//GEN-LAST:event_itemListarContasActionPerformed
 
     private void itemRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemRemoverActionPerformed
