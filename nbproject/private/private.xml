@@ -6,13 +6,13 @@
             <file>file:/D:/Arquivos%20de%20Programas/NetBeans-12.0/NetBeansProjects/projeto-sistema-banco/src/application/Program.java</file>
             <file>file:/D:/Arquivos%20de%20Programas/NetBeans-12.0/NetBeansProjects/projeto-sistema-banco/src/model_entities/Conta.java</file>
             <file>file:/D:/Arquivos%20de%20Programas/NetBeans-12.0/NetBeansProjects/projeto-sistema-banco/src/view_GUI/TelaContaEspecial.java</file>
+            <file>file:/D:/Arquivos%20de%20Programas/NetBeans-12.0/NetBeansProjects/projeto-sistema-banco/src/view_GUI/TelaPrincipal.java</file>
             <file>file:/D:/Arquivos%20de%20Programas/NetBeans-12.0/NetBeansProjects/projeto-sistema-banco/src/model_entities/RepositorioContas.java</file>
             <file>file:/D:/Arquivos%20de%20Programas/NetBeans-12.0/NetBeansProjects/projeto-sistema-banco/src/controller_db/DbException.java</file>
             <file>file:/D:/Arquivos%20de%20Programas/NetBeans-12.0/NetBeansProjects/projeto-sistema-banco/src/view_GUI/TelaConta.java</file>
             <file>file:/D:/Arquivos%20de%20Programas/NetBeans-12.0/NetBeansProjects/projeto-sistema-banco/src/model_entities/ContaEspecial.java</file>
             <file>file:/D:/Arquivos%20de%20Programas/NetBeans-12.0/NetBeansProjects/projeto-sistema-banco/src/controller_db/MySQL.java</file>
             <file>file:/D:/Arquivos%20de%20Programas/NetBeans-12.0/NetBeansProjects/projeto-sistema-banco/src/controller_db/DB.java</file>
-            <file>file:/D:/Arquivos%20de%20Programas/NetBeans-12.0/NetBeansProjects/projeto-sistema-banco/dbproperties</file>
         </group>
     </open-files>
 </project-private>

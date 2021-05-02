@@ -260,19 +260,22 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void itemListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemListarActionPerformed
         try {
-            if (array.isEmpty()) {
+            /*if (MySQL.searchContas().isEmpty()) {
                 JOptionPane.showMessageDialog(null, "Não há contas cadastradas", "Erro", JOptionPane.ERROR_MESSAGE);
             } 
             else {
                 String Snumero = JOptionPane.showInputDialog("Digite o número da conta: ");
                 int numero = Integer.parseInt(Snumero);
 
-                if (array.listar_num(numero) == null) {
+                if (MySQL.searchConta(numero) == null) {
                     JOptionPane.showMessageDialog(null, "O número não está cadastrado ! ", "ERRO", JOptionPane.ERROR_MESSAGE);
                 } else {
-                    JOptionPane.showMessageDialog(null, array.listar_num(numero), "Listagem", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null, MySQL.searchConta(numero), "Listagem", JOptionPane.INFORMATION_MESSAGE);
                 }            
-            }
+            }*/
+            String Snumero = JOptionPane.showInputDialog("Digite o número da conta: ");
+            int numero = Integer.parseInt(Snumero);
+            JOptionPane.showMessageDialog(null, MySQL.searchConta(numero), "Listagem", JOptionPane.INFORMATION_MESSAGE);
         } 
         catch (NumberFormatException erro) {
             JOptionPane.showMessageDialog(null, "CONFIRMAÇÃO NÃO FINALIZADA !", "ALERTA", JOptionPane.ERROR_MESSAGE);
